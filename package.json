@@ -1,0 +1,11 @@
+{
+  "name": "jquery_plugins",
+  "version": "1.0.0",
+  "description": "Creates a responsive hamburger menu in place of the current menu",
+  "main": "rga-responsive-menu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
