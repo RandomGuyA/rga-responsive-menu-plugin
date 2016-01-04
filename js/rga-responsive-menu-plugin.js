@@ -21,14 +21,14 @@
   }
 
   App.prototype.init = function() {
-	  
+	  console.log("rga-responsive-menu-plugin - Activated");
 	  
   };
 
 
-  $.fn.app = function(opts) {
+  $.fn.activate = function(opts) {
     return this.each(function() {
-      new Widget(this, opts);
+      new App(this, opts);
     });
   };
   

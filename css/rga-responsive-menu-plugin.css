@@ -1,0 +1,27 @@
+/*------Background Color-----*/
+/*----- Font --------*/
+
+/*------Background Color-----*/
+/*----- Font --------*/
+body {
+  background-color: #cccccc;
+}
+a,
+li,
+p {
+  font-size: 26px;
+  color: #FFFFFF;
+}
+.example-menu {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 3px solid #fff;
+}
+.example-menu a {
+  float: left;
+}
+.example-menu a li {
+  padding: 5px 20px;
+}
+
