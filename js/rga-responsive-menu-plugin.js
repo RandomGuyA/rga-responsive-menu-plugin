@@ -3,33 +3,75 @@
 /*---------------rga-responsive-menu-plugin.js------------------*/
 
 ;(function($, doc, win){
-  "use strict";
+	"use strict";
 
-  var name = 'rga-responsive-menu-plugin';
+	var name = 'rga-responsive-menu-plugin';
 
-  function App(el, opts){
-    
-	this.$el      = $(el);
-    this.$el.data(name, this);
+	function App(el, opts){
 
-    this.defaults = {};
+		this.$el      = $(el);
+		this.$el.data(name, this);
 
-    var meta      = this.$el.data(name + '-opts');
-    this.opts     = $.extend(this.defaults, opts, meta);
+		this.defaults = {
 
-    this.init();
-  }
+			activationWidth: '768',
+			iconURL: 'img/menu-alt-512.png'
 
-  App.prototype.init = function() {
-	  console.log("rga-responsive-menu-plugin - Activated");
-	  
-  };
+		};
 
+		var meta  = this.$el.data('widget-plugin-opts');
+		this.opts = $.extend(this.defaults, opts, meta);
+		
+		this.$plugin = this.$el.find('.'+name);
+		
+		this.init();
+	}
 
-  $.fn.activate = function(opts) {
-    return this.each(function() {
-      new App(this, opts);
-    });
-  };
-  
+	App.prototype.init = function() {
+		
+		var self = this;
+		
+		//Event handler for Viewport width
+		$(win).resize(function() {
+			if(self.hasReachedActivationWidth($(win).width())){
+				self.addMenuIcon();
+			}else{
+				self.removeMenuIcon();
+			}
+		});
+		
+	};
+	
+	App.prototype.addMenuIcon = function(){
+	
+		var $menuOptions = this.$plugin.find('li');
+		
+		console.log($menuOptions);
+		
+		$menuOptions.each(function(){
+			console.log("here");
+			
+		});
+		
+	};
+	
+	App.prototype.removeMenuIcon = function(){
+		
+		
+	};
+
+	
+	
+	App.prototype.hasReachedActivationWidth = function(windowWidth){
+		
+		return (windowWidth<this.defaults.activationWidth) ? true : false;
+		
+	};
+	
+	$.fn.activate = function(opts) {
+		return this.each(function() {
+			new App(this, opts);
+		});
+	};
+
 })(jQuery, document, window);
