@@ -39,16 +39,20 @@
 		var self = this;
 		var $list = self.$el;
 		
+		
+		/*-------------------- ELEMENT CSS ---------------------*/
+		
 		var hamburgerCss = {
 			width: self.defaults.listHeight+"px",
 			height: self.defaults.listHeight+"px",
 			'float': "right",
-			
 		};
 		
 		var hamburgerMenuCss = {
 			top:self.defaults.listHeight+"px",
 		};
+		
+		/*-------------------- ADD AND ARRANGE NEW ELEMENTS ---------------------*/
 		
 		var innerListWrapper = $('<li>').addClass("hamburger-menu").append($('<ul>'));		
 		var $menuIconWrapper = self.$dropDownListItems.wrapAll(innerListWrapper);		
@@ -63,6 +67,8 @@
 		var $innerList = $list.find(".hamburger-menu ul");
 		$innerList.css(hamburgerMenuCss);		
 		
+		
+		/*-------------------- BIND EVENTS ---------------------*/
 		
 		//Event handler for Viewport width
 		$(win).resize(function() {
@@ -84,7 +90,6 @@
 		});
 		
 		//Event Handler for Click to Expand Menu
-		
 		$list.find(".hamburger").click(function(){
 			
 			if($innerList.hasClass("open")){
@@ -103,6 +108,14 @@
 		});
 		
 	};
+	
+	/*-------------------- END OF INITIALSATION ---------------------*/
+	
+	
+	
+	
+	
+	/*-------------------- ADDITIONAL FUNCTIONS ---------------------*/
 	
 	App.prototype.expandMenu = function($list){
 		
@@ -153,6 +166,10 @@
 		(windowWidth<this.defaults.activationWidth) ? true : false;
 		
 	};
+	
+	
+	
+	/*-------------------- INOVOKATION ---------------------*/
 	
 	$.fn.activate = function(opts) {
 		return this.each(function() {
