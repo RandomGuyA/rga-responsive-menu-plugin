@@ -18,7 +18,7 @@ a {
 
 
 .example-menu {
-	background-color:rgba(0,0,0,0.8);
+	background-color:@gamma-background-color;
 	width:100%;
 	overflow:hidden;
 	
@@ -31,7 +31,10 @@ a {
 .example-menu a:hover {
 	background-color:#ccc;
 }
-
 .example-menu li a {
 	padding:5px 20px;
+	
+}
+.example-menu li a.hamburger {
+	padding:0 20px;
 }

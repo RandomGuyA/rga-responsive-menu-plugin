@@ -1,5 +1,26 @@
 
+@import "rga-responsive-menu-plugin-config-file.less";
 
-.rga-responsive-menu-plugin {
+.rga-responsive-menu-plugin .hamburger {
+	float:right;
 	
+	cursor:pointer;
+}
+
+.rga-responsive-menu-plugin .hamburger img{
+	width:100%;
+	height:auto;
+}
+
+.rga-responsive-menu-plugin .hamburger-menu ul {
+	position:absolute;
+	right:0;
+	top:0;
+	padding-left:0;
+	background-color:@gamma-background-color;
+	display:none;
+}
+
+.rga-responsive-menu-plugin .hamburger-menu {
+	display:none;
 }

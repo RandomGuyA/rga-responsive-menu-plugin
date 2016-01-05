@@ -29,4 +29,28 @@ a {
 .example-menu li a {
   padding: 5px 20px;
 }
+.example-menu li a.hamburger {
+  padding: 0 20px;
+}
 
+/*------Background Color-----*/
+/*----- Font --------*/
+.rga-responsive-menu-plugin .hamburger {
+  float: right;
+  cursor: pointer;
+}
+.rga-responsive-menu-plugin .hamburger img {
+  width: 100%;
+  height: auto;
+}
+.rga-responsive-menu-plugin .hamburger-menu ul {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.rga-responsive-menu-plugin .hamburger-menu {
+  display: none;
+}
